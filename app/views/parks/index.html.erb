@@ -1,14 +1,9 @@
 <h1>Park Data</h1>
 <%=@parks.count%> National Parks 
 <%@parks.each do |park|%>
-  <h2><p><%=park[:fullName]%></p></h2><br>
-  <p>Description: <%=park[:description]%></p><br>
-  <p>Directions: <%=park[:directionsInfo]%></p><br>
+  <h2><p><%=park.name%></p></h2><br>
+  <p>Description: <%=park.description%></p><br>
+  <p>Directions: <%=park.directions%></p><br>
   <strong>Hours </strong>
-  <%park[:operatingHours].each do |hours|%>
-    <%hours[:standardHours].each do |day, hours|%>
-      <p><strong><%=day%></strong>: <%=hours%></p>
-    <%end%>
-  <%end%>
-
+  <%=park.hours%>
 <%end%>
